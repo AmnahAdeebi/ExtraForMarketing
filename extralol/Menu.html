@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Filter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        p.subtitle {
+            color: #555;
+            font-size: 1em;
+            margin-bottom: 40px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            cursor: pointer;
+            padding: 10px 20px;
+            margin: 0 5px;
+            display: inline-block;
+            border-bottom: 2px solid transparent;
+            color: #bbb89b;
+            font-size: 1.2em;
+        }
+        .tab.active {
+            border-bottom: 2px solid #000;
+            color: #000;
+        }
+        .contents {
+            display: none;
+            justify-content: center;
+            overflow-x: auto;
+            padding: 20px 0;
+        }
+        .contents.active {
+            display: flex;
+        }
+        .content {
+            max-width: 200px;
+            margin: 0 10px;
+            flex: 0 0 auto;
+            text-align: center;
+        }
+        .content img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .content p {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .content p.description {
+            color: #555;
+            font-size: 0.9em;
+        }
+        .content p.details {
+            font-size: 0.8em;
+            color: #999;
+            margin: 5px 0;
+        }
+        .nutrition-section {
+            padding: 40px 20px;
+        }
+        .nutrition-heading {
+            font-size: 2.5em;
+            color: #023f3a;
+            margin-bottom: 20px;
+        }
+        .nutrition-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.6;
+        }
+        .buy-button {
+            background-color: #023f3a;
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .buy-button:hover {
+            background-color: #026155;
+        }
+    </style>
+</head>
+<body>
+    <h1>HEALTHY & TASTY</h1>
+    <p class="subtitle">You can mix and match as you like depending on the occasion and mood.<br>Over 40 original recipes.</p>
+    <div class="tabs">
+        <div class="tab active" data-target="keto">KETO</div>
+        <div class="tab" data-target="vegetarian">VEGETARIAN</div>
+        <div class="tab" data-target="high-protein">HIGH-PROTEIN</div>
+        <div class="tab" data-target="balanced">BALANCED</div>
+    </div>
+    
+    <div class="contents active" id="keto">
+        <div class="content">
+            <img src="images/keto1.jpg" alt="Keto Dish 1">
+            <p class="description">Breakfast</p>
+            <p class="details">Authentic chicken gapao with colorful vegetables</p>
+            <p class="details">Calories: 205 kcal | Protein: 26.1 g | Vegetables: 4 kinds</p>
+        </div>
+        <div class="content">
+            <img src="images/keto2.jpg" alt="Keto Dish 2">
+            <p class="description">Lunch</p>
+            <p class="details">Authentic chicken gapao with colorful vegetables</p>
+            <p class="details">Calories: 205 kcal | Protein: 26.1 g | Vegetables: 4 kinds</p>
+        </div>
+        <div class="content">
+            <img src="images/keto3.jpg" alt="Keto Dish 3">
+            <p class="description">Dinner</p>
+            <p class="details">Authentic chicken gapao with colorful vegetables</p>
+            <p class="details">Calories: 205 kcal | Protein: 26.1 g | Vegetables: 4 kinds</p>
+        </div>
+        <div class="content">
+            <img src="images/keto4.jpg" alt="Keto Dish 4">
+            <p class="description">Snack</p>
+            <p class="details">Authentic chicken gapao with colorful vegetables</p>
+            <p class="details">Calories: 205 kcal | Protein: 26.1 g | Vegetables: 4 kinds</p>
+        </div>
+    </div>
+
+    <div class="contents" id="vegetarian">
+        <div class="content">
+            <img src="images/vegBreak.jpg" alt="Vegetarian Dish 1">
+            <p class="description">Breakfast</p>
+            <p class="details">Delicious tofu scramble with mixed veggies</p>
+            <p class="details">Calories: 180 kcal | Protein: 15.2 g | Vegetables: 5 kinds</p>
+        </div>
+        <div class="content">
+            <img src="images/vegLunch.jpg" alt="Vegetarian Dish 2">
+            <p class="description">Lunch</p>
+            <p class="details">Quinoa salad with fresh greens</p>
+            <p class="details">Calories: 220 kcal | Protein: 8.3 g | Vegetables: 6 kinds</p>
+        </div>
+        <div class="content">
+            <img src="images/vegDinner.jpg" alt="Vegetarian Dish 3">
+            <p class="description">Dinner</p>
+            <p class="details">Grilled vegetable platter with hummus</p>
+            <p class="details">Calories: 250 kcal | Protein: 10.5 g | Vegetables: 7 kinds</p>
+        </div>
+        <div class="content">
+            <img src="images/vegsnack.jpg" alt="Vegetarian Dish 4">
+            <p class="description">Snack</p>
+            <p class="details">Mixed fruit bowl with nuts</p>
+            <p class="details">Calories: 150 kcal | Protein: 4.8 g | Fruits: 3 kinds</p>
+        </div>
+    </div>
+
+    <div class="contents" id="high-protein">
+        <div class="content">
+            <img src="images/proteinBreak.jpg" alt="High-Protein Dish 1">
+            <p class="description">Breakfast</p>
+            <p class="details">Egg white omelette with spinach</p>
+            <p class="details">Calories: 150 kcal | Protein: 20.1 g | Vegetables: 2 kinds</p>
+        </div>
+        <div class="content">
+            <img src="images/proteinLunch.jpg" alt="High-Protein Dish 2">
+            <p class="description">Lunch</p>
+            <p class="details">Chicken breast with broccoli and quinoa</p>
+            <p class="details">Calories: 300 kcal | Protein: 35.4 g | Vegetables: 3 kinds</p>
+        </div>
+        <div class="content">
+            <img src="images/ProteinDinneer.jpg" alt="High-Protein Dish 3">
+            <p class="description">Dinner</p>
+            <p class="details">Grilled salmon with asparagus</p>
+            <p class="details">Calories: 320 kcal | Protein: 30.7 g | Vegetables: 4 kinds</p>
+        </div>
+        <div class="content">
+            <img src="images/ProteinSnack.jpg" alt="High-Protein Dish 4">
+            <p class="description">Snack</p>
+            <p class="details">Greek yogurt with berries</p>
+            <p class="details">Calories: 200 kcal | Protein: 15.6 g | Fruits: 2 kinds</p>
+        </div>
+    </div>
+
+    <div class="contents" id="balanced">
+        <div class="content">
+            <img src="images/BalanacedBreakfast.jpg" alt="Balanced Dish 1">
+            <p class="description">Breakfast</p>
+            <p class="details">Oatmeal with fresh fruits</p>
+            <p class="details">Calories: 200 kcal | Protein: 5.3 g | Fruits: 3 kinds</p>
+        </div>
+        <div class="content">
+            <img src="images/balancedLunch.jpg" alt="Balanced Dish 2">
+            <p class="description">Lunch</p>
+            <p class="details">Turkey sandwich with whole grain bread</p>
+            <p class="details">Calories: 250 kcal | Protein: 18.4 g | Vegetables: 3 kinds</p>
+        </div>
+        <div class="content">
+            <img src="images/BalancedDinner.jpg" alt="Balanced Dish 3">
+            <p class="description">Dinner</p>
+            <p class="details">Stir-fried beef with mixed vegetables</p>
+            <p class="details">Calories: 280 kcal | Protein: 22.6 g | Vegetables: 4 kinds</p>
+        </div>
+        <div class="content">
+            <img src="images/balancedsnack.jpg" alt="Balanced Dish 4">
+            <p class="description">Snack</p>
+            <p class="details">Whole grain crackers with cheese</p>
+            <p class="details">Calories: 180 kcal | Protein: 7.5 g | Dairy: 1 kind</p>
+        </div>
+    </div>
+
+    <section class="nutrition-section">
+        <h2 class="nutrition-heading">Nutrition Value</h2>
+        <div class="nutrition-content">
+            <p>The ketogenic (keto) diet, characterized by high-fat, moderate-protein, and very low-carbohydrate intake, offers several health benefits. By shifting the body's metabolism to burn fat for fuel instead of carbohydrates, it can lead to significant weight loss and improved body composition. The diet also helps stabilize blood sugar levels, making it beneficial for those with type 2 diabetes or insulin resistance. Additionally, the keto diet may enhance mental clarity and focus by providing a steady energy source to the brain. Some studies suggest it can reduce inflammation and lower the risk of chronic diseases, contributing to overall health improvement.</p>
+        </div>
+    </section>
+    <button class="buy-button">Buy</button>
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.contents');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const target = tab.dataset.target;
+                contents.forEach(content => {
+                    if (content.id === target) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
